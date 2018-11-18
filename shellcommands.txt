@@ -1,0 +1,32 @@
+free -m | awk 'NR==2{printf " %s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }'
+
+df -h | awk '$NF=="/"{printf "%d/%dGB (%s)\n", $3,$2,$5}'
+
+top -bn1 | grep load | awk '{printf "%.2f\n", $(NF-2)}'
+
+ps -ef | grep AppSrv | grep -v grep |sort|uniq -c|wc -l
+
+who | cut -d " " -f1| tr '\n' ' '
+
+ps -ef | grep AppSrv01 | grep -v grep | awk '{print $2}'
+
+ps -ef|grep AppSrv03|grep -v grep|wc -l
+
+
+
+Check memory:
+free -m | awk 'NR==2{printf " %s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }'
+Check disk:
+df -h | awk '$NF=="/"{printf "%d/%dGB (%s)\n", $3,$2,$5}'
+Check logs:
+ps -ef | grep AppSrv | grep -v grep | awk '{print $2, $5, $7, $12}'
+Check cpu:
+top -bn1 | grep load | awk '{printf "%.2f\n", $(NF-2)}'
+Check was:
+ps -ef | grep AppSrv | grep -v grep |sort|uniq -c|wc -l
+Check users:
+who | cut -d " " -f1| tr '\n' ' '
+Check instance1:
+ps -ef | grep AppSrv01 | grep -v grep | awk '{printf "AppSrv""01\t"  $2}'
+Check instance2:
+ps -ef | grep AppSrv02 | grep -v grep | awk '{printf "AppSrv""02\t"  $2}'

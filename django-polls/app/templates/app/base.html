@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <style>
+h5 {
+    
+    font-size: 12px;
+    width: 100%;
+    text-align: right;
+    	
+}
+
+#logout {
+     background-color: white;
+	 color: black;
+
+
+}
+#logout:hover {
+     background-color: #ddd;
+	 color: white;
+	
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <ul class="nav nav-tabs" role="tablist">
+     <li class="active"><a href="{% url 'app:index' %}">Home</a></li>
+     <!--<li><a href="{% url 'app:topics' %}">Hosts</a></li>-->
+     <li><a href="{% url 'app:clients' %}">Servers</a></li>
+	 
+     <a href="{% url 'users:logout'%}" class="btn btn-sm" id="logout" style="float:right">logout</a>
+
+ 
+</ul>
+<h5> {{ user.username }} </h5>
+
+</div>
+{% block content %}{% endblock content %}
+</body>
+</html>

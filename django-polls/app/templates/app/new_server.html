@@ -1,0 +1,24 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+<head>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+<p></p>
+<h4 class="text-center p-3 mb-2 bg-info ">{{ client }}</h4>
+<p>Add new server:</p>
+<form action="{% url 'app:new_server' client.id %}" method='post'>
+
+{% csrf_token %}
+{{ form.as_p }}
+<button name='submit' class="btn btn-info btn-sm">add server </button>
+
+{% endblock content %}

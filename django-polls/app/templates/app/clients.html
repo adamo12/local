@@ -1,0 +1,32 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+<head>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+
+</head>
+<body>
+<div class="container">
+<p></p>
+<h4>CLIENTS:</h4>
+<ul>
+{% for client in clients %}
+<li>
+
+<a href="{% url 'app:client' client.id %}">{{ client }}  </a> 
+</li>
+{% empty %}
+<li>No client have been added yet.</li>
+{% endfor %}
+</ul>
+<a href="{% url 'app:new_client' %}"class="btn btn-primary btn-sm">Add new client:</a>
+</div>
+
+</body>
+{% endblock content %}

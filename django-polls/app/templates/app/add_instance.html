@@ -1,0 +1,12 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+<p>{{ server }}</p>
+<p>Add new instance:</p>
+<form action="{% url 'app:add_instance' server.id %}" method='post'>
+
+{% csrf_token %}
+{{ form.as_p }}
+<button name='submit'>add instance</button>
+
+{% endblock content %}

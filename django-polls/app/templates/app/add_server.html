@@ -1,0 +1,14 @@
+{% extends "app/base.html" %}
+{% block content %}
+
+<p><a href="{% url 'app:server' server.id %}">{{ server }}</a></p>
+<p>Add hostname:</p>
+<form action="{% url 'app:add_server' server.id %}" method='post'>
+
+{% csrf_token %}
+{{ form.as_p }}
+<p>Add ip:</p>
+{{ form.as_p }}
+<button name='submit'>add server</button>
+</form>
+{% endblock content %}

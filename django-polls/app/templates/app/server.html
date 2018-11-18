@@ -1,0 +1,95 @@
+{% extends "app/base.html" %}
+{% block content %}
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+#edit {
+     background-color: white;
+	 color: black;
+
+
+}
+#edit:hover {
+    background-color: #e0a800;
+    color: white;
+
+
+}
+#btnShow {
+     background-color: white;
+	 color: black;
+
+
+}
+#btnShow:hover {
+     background-color: #008CBA;
+	 color: white;
+	
+}
+
+</style>
+<script type="text/javascript" language="javascript">
+ setInterval("my_function();",60000); 
+    function my_function(){
+      $('#divShow').load(location.href + ' #divShow');
+    }
+</script>
+
+<script>
+$(function() {
+     $("#btnShow").on("click", function() {
+        $("#divShow").load(location.href + ' #divShow');
+    })
+  })
+</script>
+
+</head>
+
+<body>
+<p></p>
+<div class="container">
+<p></p>
+<h3 class="text-center p-3 mb-2 bg-info ">{{ server.text }}</h3>
+
+<p></p>
+<div>
+    <input type="button" id="btnShow" value="refresh" class="btn btn-info btn-sm" style="float:right" />
+</div>
+
+<div>
+<p><a href="{% url 'app:edit_server' server.id %}" class="btn btn-warning  btn-sm" id="edit" style="float:center">edit </a></p>
+</div>
+<div class="container" id="divShow">
+
+<p>{{output_time}}</p>
+<p></p>
+
+<h4>Users logged on:</h4> {{ output_users }}
+
+<h4>Disk usage:</h4> {{ output_disk }}
+<p></p>
+<h4>Memory usage:</h4> {{ output_mem }}
+<p></p>
+<p><h4>CPU usage :</h4> {{ output_cpu }}
+<p></p>
+<h4>WAS instances: {{ output_was }}</h4>
+<p> {{output_it1}}</p>
+<p> {{output_it2}}</p>
+<p> {{output_it3}}</p>
+<p> {{output_it4}}</p>
+<p> {{output_it5}}</p>
+<p> {{output_it6}}</p>
+<p> {{output_it7}}</p>
+<p> {{output_it8}}</p>
+<p> {{output_it9}}</p>
+<p> {{output_it10}}</p>
+<!--<p><a href="{% url 'app:add_instance' server.id %}">add new instance</a>
+</p>-->
+</div> 
+</div>
+</body>
+{% endblock content %}

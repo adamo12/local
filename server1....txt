@@ -1,0 +1,84 @@
+Tuesday 39 2018 06:37:43 AM
+
+Server: server1
+Users: adam adam 
+
+Memory usage:  753/993MB (75.83%)
+
+CPU usage: 0.72564%
+
+Disk usage: 14/42GB (33%)
+
+WAS instances: 2
+
+---------------------------------------------------
+Tuesday 39 2018 06:39:50 AM
+
+Server: server1
+Users: adam adam 
+
+Memory usage:  776/993MB (78.15%)
+
+CPU usage: 0.727799%
+
+Disk usage: 14/42GB (33%)
+
+WAS instances: 2
+
+---------------------------------------------------
+Tuesday 39 2018 06:40:32 AM
+
+Server: server1
+Users: adam adam 
+
+Memory usage:  776/993MB (78.15%)
+
+CPU usage: 0.728464%
+
+Disk usage: 14/42GB (33%)
+
+WAS instances: 2
+
+---------------------------------------------------
+Tuesday 39 2018 06:40:45 AM
+
+Server: server1
+Users: adam adam 
+
+Memory usage:  776/993MB (78.15%)
+
+CPU usage: 0.729046%
+
+Disk usage: 14/42GB (33%)
+
+WAS instances: 2
+
+---------------------------------------------------
+Tuesday 39 2018 06:43:28 AM
+
+Server: server1
+Users: adam adam 
+
+Memory usage:  773/993MB (77.84%)
+
+CPU usage: 0.729226%
+
+Disk usage: 14/42GB (33%)
+
+WAS instances: 2
+
+---------------------------------------------------
+Tuesday 39 2018 06:43:45 AM
+
+Server: server1
+Users: adam adam 
+
+Memory usage:  771/993MB (77.64%)
+
+CPU usage: 0.729754%
+
+Disk usage: 14/42GB (33%)
+
+WAS instances: 2
+
+---------------------------------------------------

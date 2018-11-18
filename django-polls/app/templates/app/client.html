@@ -1,0 +1,66 @@
+{% extends "app/base.html" %}
+{% block content %}
+<head>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+#edit {
+     background-color: white;
+	 color: black;
+	 font-size: 10px;     
+     
+
+
+}
+#edit:hover {
+    background-color: #e0a800;
+    color: white;
+	font-size: 9px;
+    
+	}
+h4 {
+    background-color: #e6f2ff;
+	
+     
+}
+    
+    
+    	
+
+</style>
+</head>
+<body>
+
+<div class="container">
+<p></p>
+
+<h3>{{ client }} SERVERS:</h3>
+
+<ul>
+{% for server in entries %}
+
+<!--<p>{{ entry.date_added|date:"Y-m-d H:i:s"}}</p>-->
+<!--<p>{{ server.date_updated|date:"Y-m-d H:i:s"}}</p>-->
+<h4><a class="text-left p-3 mb-2 bg-info " href="{% url 'app:server' server.id %}" >{{ server.text|linebreaks }}</a>
+<p></p>
+<a href="{% url 'app:edit_server' server.id %}" class="btn btn-warning btn-sm" id="edit">edit </a></h4>
+
+{% csrf_token %}
+{{ form.as_p }}
+{%empty%}
+
+No servers
+</li>
+{%endfor%}
+</ul>
+<p>
+<a href="{% url 'app:new_server' client.id %}" class="btn btn-primary btn-sm">add new server</a>
+</p>
+</div>
+
+</body>
+{% endblock content %}
